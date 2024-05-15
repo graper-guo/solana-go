@@ -1,4 +1,4 @@
-module ithub.com/graper-guo/solana-go
+module github.com/graper-guo/solana-go
 
 go 1.19
 
