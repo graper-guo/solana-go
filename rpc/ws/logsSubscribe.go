@@ -72,6 +72,20 @@ func (cl *Client) LogsSubscribeMentions(
 	)
 }
 
+func (cl *Client) LogsSubscribeMultiMentions(
+	// Subscribe to all transactions that mention the provided Pubkey.
+	mentions []string,
+	// (optional)
+	commitment rpc.CommitmentType,
+) (*LogSubscription, error) {
+	return cl.logsSubscribe(
+		rpc.M{
+			"mentions": mentions,
+		},
+		commitment,
+	)
+}
+
 // LogsSubscribe subscribes to transaction logging.
 func (cl *Client) logsSubscribe(
 	filter interface{},
